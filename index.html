@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReepsUFSC</title>
+    <style>
+        /* Estilos básicos */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5e2bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Estilo adicional para transformar a header em um botão */
+        header a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            display: inline-block; /* Torna o elemento um bloco inline para ajustar ao conteúdo */
+            transition: color 0.3s ease, background-color 0.3s ease; /* Efeito de transição */
+        }
+
+        /* Adicionando efeito de hover para a header */
+        header a:hover {
+            background-color: #3a1d75;
+        }
+
+        nav {
+            background-color: #5e2bff;
+            padding: 20px;
+            text-align: left;
+            width: 200px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #8a55ff;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, background-color 0.3s ease; /* Efeito de transição */
+        }
+
+        /* Adicionando efeito de hover para os itens do menu */
+        nav a:hover {
+            background-color: #3a1d75;
+        }
+
+        nav ul {
+            padding-left: 20px;
+        }
+
+        /* Reduzindo o tamanho da fonte das subcategorias */
+        nav ul ul {
+            font-size: 0.9em;
+        }
+
+        main {
+            display: flex;
+            align-items: flex-start;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Alterando o modo de cor do #ranking para RGB usando style diretamente */
+        #ranking {
+            padding: 20px;
+            border-radius: 5px;
+            width: 45%;
+            align-self: flex-start;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição */
+        }
+
+        /* Adicionando efeito de hover para a seção de ranking */
+        #ranking:hover {
+            background-color: #3a1d75;
+            color: white;
+        }
+
+        footer {
+            background-color: #5e2bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        #courses {
+            background-color: #5e2bff;
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        #courses a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #8a55ff;
+            margin-bottom: 10px;
+            transition: color 0.3s ease, background-color 0.3s ease; /* Efeito de transição */
+        }
+
+        #recent-resumes {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .resume {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 48%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .resume:hover {
+            transform: scale(1.05);
+        }
+
+        .resume h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .resume p {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Adicionando efeito de hover para os itens do menu lateral */
+        #courses a:hover {
+            background-color: #3a1d75;
+        }
+
+        /* Adicionando estilos para o textarea */
+        textarea {
+            resize: none;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* Adicionando estilos para a área do usuário logado */
+        #user-info {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #5e2bff;
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            flex-direction: column; /* Alterando para coluna para permitir quebras de linha */
+            align-items: flex-end; /* Alinhando o conteúdo à direita */
+        }
+
+        #user-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-bottom: 5px; /* Adicionando espaço entre a imagem e o texto */
+        }
+
+        #user-info span {
+            margin-bottom: 5px; /* Adicionando espaço entre as linhas de texto */
+        }
+    </style>
+</head>
+<body>
+    <!-- Adicionando o link para a página inicial na header -->
+    <header>
+        <a href="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXpwcGgxNDJwNzAzNDFtczVydnY2YWNmbG5qZ2pkbjhvMmYxaHhjcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftqLysT45BJMagKFuk/giphy.gif" target="_blank">
+            <h1>ReepsUFSC</h1>
+        </a>
+    </header>
+
+    <!-- Adicionando a área do usuário logado -->
+    <div id="user-info">
+        <img src="https://via.placeholder.com/30" alt="User Avatar"> 
+        <span>Nome do Usuário</span>
+        <span>Email: usuario@dominio.com</span>
+        <span>Resumos Aprovados: 10</span>
+        <span>Membro desde: 01/01/2023</span>
+    </div>
+
+    <nav id="courses">
+        <ul>
+            <li><a href="#biblioteconomia">Biblioteconomia</a>
+                <ul>
+                    <li><a href="#empreendedorismo">Empreendedorismo</a></li>
+                </ul>
+            </li>
+            <li><a href="#arquivologia">Arquivologia</a>
+                <ul>
+                    <li><a href="#introducao_tecnologia">Introdução à Tecnologia</a></li>
+                </ul>
+            </li>
+            <li><a href="#ciencia_informacao">Ciência da Informação</a>
+                <ul>
+                    <li><a href="#calculo_76">Cálculo 76</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="ranking">
+            <h2>Ranking</h2>
+            <ol>
+                <li>Usuário 1 - 10 posts</li>
+                <li>Usuário 2 - 8 posts</li>
+                <li>Usuário 3 - 6 posts</li>
+                <li>Usuário 4 - 4 posts</li>
+                <li>Usuário 5 - 2 posts</li>
+            </ol>
+        </section>
+
+        <!-- Adicionando o textarea -->
+        <textarea placeholder="Digite seu texto aqui"></textarea>
+        <p>1</p>
+        <p>2</p>
+    </main>
+    <!-- Adicionando a seção de resumos recentemente aprovados -->
+    <h2>Resumos Recentemente Aprovados</h2>
+    <div id="recent-resumes">
+        <!-- Exemplo de resumo expansível 1 -->
+        <div class="resume" onclick="toggleExpand('resume1')">
+            <h3>Título do Resumo 1</h3>
+            <p>Publicado por: Autor 1</p>
+        </div>
+
+        <!-- Exemplo de resumo expansível 2 -->
+        <div class="resume" onclick="toggleExpand('resume2')">
+            <h3>Título do Resumo 2</h3>
+            <p>Publicado por: Autor 2</p>
+        </div>
+
+        <!-- Exemplo de resumo expansível 3 -->
+        <div class="resume" onclick="toggleExpand('resume3')">
+            <h3>Título do Resumo 3</h3>
+            <p>Publicado por: Autor 3</p>
+        </div>
+
+        <!-- Exemplo de resumo expansível 4 -->
+        <div class="resume" onclick="toggleExpand('resume4')">
+            <h3>Título do Resumo 4</h3>
+            <p>Publicado por: Autor 4</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 ReepsUFSC</p>
+    </footer>
+</body>
+</html>
