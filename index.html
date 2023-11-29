@@ -89,10 +89,12 @@
 
         /* Alterando o modo de cor do #ranking para RGB usando style diretamente */
         #ranking {
-            padding: 20px;
-            border-radius: 5px;
+            margin-top: 0px;
+            margin-left: -252px;
+            padding: 10px;
+            border-radius: 25px;
             width: 45%;
-            align-self: flex-start;
+            align-self: self-start;
             transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição */
         }
 
@@ -147,7 +149,7 @@
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
-            width: 48%;
+            width: 28%;
             transition: transform 0.3s ease;
             cursor: pointer;
         }
@@ -175,9 +177,24 @@
         textarea {
             resize: none;
             width: 100%;
-            padding: 10px;
+            padding: 20px;
             box-sizing: border-box;
             margin-bottom: 10px;
+        }
+        /* Adicionando estilos para o botão Enviar */
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5e2bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Efeito de transição */
+        }
+
+        button:hover {
+            background-color: #3a1d75;
         }
 
         /* Adicionando estilos para a área do usuário logado */
@@ -253,13 +270,14 @@
                 <li>Usuário 4 - 4 posts</li>
                 <li>Usuário 5 - 2 posts</li>
             </ol>
-        </section>
+        </section> 
 
         <!-- Adicionando o textarea -->
         <textarea placeholder="Digite seu texto aqui"></textarea>
-        <p>1</p>
-        <p>2</p>
     </main>
+    <!-- Adicionando botão de enviar -->
+    <button id="submit-button" onclick="submitText()">Enviar</button>
+
     <!-- Adicionando a seção de resumos recentemente aprovados -->
     <h2>Resumos Recentemente Aprovados</h2>
     <div id="recent-resumes">
@@ -280,16 +298,23 @@
             <h3>Título do Resumo 3</h3>
             <p>Publicado por: Autor 3</p>
         </div>
-
-        <!-- Exemplo de resumo expansível 4 -->
-        <div class="resume" onclick="toggleExpand('resume4')">
-            <h3>Título do Resumo 4</h3>
-            <p>Publicado por: Autor 4</p>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2023 ReepsUFSC</p>
     </footer>
+
+    <script>
+        // Função para expandir ou recolher resumo
+        function toggleExpand(resumeId) {
+            const resume = document.getElementById(resumeId);
+            resume.classList.toggle('expanded');
+        }
+
+        // Função simulada para enviar o texto
+        function submitText() {
+            alert('Texto enviado!');
+        }
+    </script>
 </body>
 </html>
